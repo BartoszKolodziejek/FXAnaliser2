@@ -1,0 +1,360 @@
+Augmented Dickey-Fuller Test 
+alternative: stationary 
+ 
+Type 1: no drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,48556731117975              0,01
+[2,]                 1 -5,53175437961554              0,01
+[3,]                 2 -3,16828034651548              0,01
+[4,]                 3 -3,82074912448708              0,01
+Type 2: with drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,39049554765301              0,01
+[2,]                 1 -5,45606925778391              0,01
+[3,]                 2  -3,1178345879606  0,03652217167834
+[4,]                 3 -3,76243938457499              0,01
+Type 3: with drift and trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,29561685800029              0,01
+[2,]                 1 -5,38511083489509              0,01
+[3,]                 2 -3,03703698826659  0,16203634725838
+[4,]                 3 -3,74110988986165  0,03345649605525
+---- 
+Note: in fact, p.value = 0.01 means p.value <= 0.01 
+KPSS Unit Root Test 
+alternative: nonstationary 
+ 
+Type 1: no drift no trend 
+              lag             stat          p.value
+                4 0,07480849041582              0,1
+----- 
+ Type 2: with drift no trend 
+              lag             stat          p.value
+                4 0,07395787852571              0,1
+----- 
+ Type 1: with drift and trend 
+             lag            stat         p.value
+               4 0,0613401326887             0,1
+----------- 
+Note: p.value = 0.01 means p.value <= 0.01 
+    : p.value = 0.10 means p.value >= 0.10 
+Augmented Dickey-Fuller Test 
+alternative: stationary 
+ 
+Type 1: no drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,48556731117975              0,01
+[2,]                 1 -5,53175437961554              0,01
+[3,]                 2 -3,16828034651548              0,01
+[4,]                 3 -3,82074912448708              0,01
+Type 2: with drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,39049554765301              0,01
+[2,]                 1 -5,45606925778391              0,01
+[3,]                 2  -3,1178345879606  0,03652217167834
+[4,]                 3 -3,76243938457499              0,01
+Type 3: with drift and trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,29561685800029              0,01
+[2,]                 1 -5,38511083489509              0,01
+[3,]                 2 -3,03703698826659  0,16203634725838
+[4,]                 3 -3,74110988986165  0,03345649605525
+---- 
+Note: in fact, p.value = 0.01 means p.value <= 0.01 
+KPSS Unit Root Test 
+alternative: nonstationary 
+ 
+Type 1: no drift no trend 
+              lag             stat          p.value
+                4 0,07480849041582              0,1
+----- 
+ Type 2: with drift no trend 
+              lag             stat          p.value
+                4 0,07395787852571              0,1
+----- 
+ Type 1: with drift and trend 
+             lag            stat         p.value
+               4 0,0613401326887             0,1
+----------- 
+Note: p.value = 0.01 means p.value <= 0.01 
+    : p.value = 0.10 means p.value >= 0.10 
+Augmented Dickey-Fuller Test 
+alternative: stationary 
+ 
+Type 1: no drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,48556731117975              0,01
+[2,]                 1 -5,53175437961554              0,01
+[3,]                 2 -3,16828034651548              0,01
+[4,]                 3 -3,82074912448708              0,01
+Type 2: with drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,39049554765301              0,01
+[2,]                 1 -5,45606925778391              0,01
+[3,]                 2  -3,1178345879606  0,03652217167834
+[4,]                 3 -3,76243938457499              0,01
+Type 3: with drift and trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,29561685800029              0,01
+[2,]                 1 -5,38511083489509              0,01
+[3,]                 2 -3,03703698826659  0,16203634725838
+[4,]                 3 -3,74110988986165  0,03345649605525
+---- 
+Note: in fact, p.value = 0.01 means p.value <= 0.01 
+KPSS Unit Root Test 
+alternative: nonstationary 
+ 
+Type 1: no drift no trend 
+              lag             stat          p.value
+                4 0,07480849041582              0,1
+----- 
+ Type 2: with drift no trend 
+              lag             stat          p.value
+                4 0,07395787852571              0,1
+----- 
+ Type 1: with drift and trend 
+             lag            stat         p.value
+               4 0,0613401326887             0,1
+----------- 
+Note: p.value = 0.01 means p.value <= 0.01 
+    : p.value = 0.10 means p.value >= 0.10 
+Augmented Dickey-Fuller Test 
+alternative: stationary 
+ 
+Type 1: no drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,48556731117975              0,01
+[2,]                 1 -5,53175437961554              0,01
+[3,]                 2 -3,16828034651548              0,01
+[4,]                 3 -3,82074912448708              0,01
+Type 2: with drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,39049554765301              0,01
+[2,]                 1 -5,45606925778391              0,01
+[3,]                 2  -3,1178345879606  0,03652217167834
+[4,]                 3 -3,76243938457499              0,01
+Type 3: with drift and trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,29561685800029              0,01
+[2,]                 1 -5,38511083489509              0,01
+[3,]                 2 -3,03703698826659  0,16203634725838
+[4,]                 3 -3,74110988986165  0,03345649605525
+---- 
+Note: in fact, p.value = 0.01 means p.value <= 0.01 
+KPSS Unit Root Test 
+alternative: nonstationary 
+ 
+Type 1: no drift no trend 
+              lag             stat          p.value
+                4 0,07480849041582              0,1
+----- 
+ Type 2: with drift no trend 
+              lag             stat          p.value
+                4 0,07395787852571              0,1
+----- 
+ Type 1: with drift and trend 
+             lag            stat         p.value
+               4 0,0613401326887             0,1
+----------- 
+Note: p.value = 0.01 means p.value <= 0.01 
+    : p.value = 0.10 means p.value >= 0.10 
+Augmented Dickey-Fuller Test 
+alternative: stationary 
+ 
+Type 1: no drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,48556731117975              0,01
+[2,]                 1 -5,53175437961554              0,01
+[3,]                 2 -3,16828034651548              0,01
+[4,]                 3 -3,82074912448708              0,01
+Type 2: with drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,39049554765301              0,01
+[2,]                 1 -5,45606925778391              0,01
+[3,]                 2  -3,1178345879606  0,03652217167834
+[4,]                 3 -3,76243938457499              0,01
+Type 3: with drift and trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,29561685800029              0,01
+[2,]                 1 -5,38511083489509              0,01
+[3,]                 2 -3,03703698826659  0,16203634725838
+[4,]                 3 -3,74110988986165  0,03345649605525
+---- 
+Note: in fact, p.value = 0.01 means p.value <= 0.01 
+KPSS Unit Root Test 
+alternative: nonstationary 
+ 
+Type 1: no drift no trend 
+              lag             stat          p.value
+                4 0,07480849041582              0,1
+----- 
+ Type 2: with drift no trend 
+              lag             stat          p.value
+                4 0,07395787852571              0,1
+----- 
+ Type 1: with drift and trend 
+             lag            stat         p.value
+               4 0,0613401326887             0,1
+----------- 
+Note: p.value = 0.01 means p.value <= 0.01 
+    : p.value = 0.10 means p.value >= 0.10 
+Augmented Dickey-Fuller Test 
+alternative: stationary 
+ 
+Type 1: no drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,48556731117975              0,01
+[2,]                 1 -5,53175437961554              0,01
+[3,]                 2 -3,16828034651548              0,01
+[4,]                 3 -3,82074912448708              0,01
+Type 2: with drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,39049554765301              0,01
+[2,]                 1 -5,45606925778391              0,01
+[3,]                 2  -3,1178345879606  0,03652217167834
+[4,]                 3 -3,76243938457499              0,01
+Type 3: with drift and trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,29561685800029              0,01
+[2,]                 1 -5,38511083489509              0,01
+[3,]                 2 -3,03703698826659  0,16203634725838
+[4,]                 3 -3,74110988986165  0,03345649605525
+---- 
+Note: in fact, p.value = 0.01 means p.value <= 0.01 
+KPSS Unit Root Test 
+alternative: nonstationary 
+ 
+Type 1: no drift no trend 
+              lag             stat          p.value
+                4 0,07480849041582              0,1
+----- 
+ Type 2: with drift no trend 
+              lag             stat          p.value
+                4 0,07395787852571              0,1
+----- 
+ Type 1: with drift and trend 
+             lag            stat         p.value
+               4 0,0613401326887             0,1
+----------- 
+Note: p.value = 0.01 means p.value <= 0.01 
+    : p.value = 0.10 means p.value >= 0.10 
+Augmented Dickey-Fuller Test 
+alternative: stationary 
+ 
+Type 1: no drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,48556731117975              0,01
+[2,]                 1 -5,53175437961554              0,01
+[3,]                 2 -3,16828034651548              0,01
+[4,]                 3 -3,82074912448708              0,01
+Type 2: with drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,39049554765301              0,01
+[2,]                 1 -5,45606925778391              0,01
+[3,]                 2  -3,1178345879606  0,03652217167834
+[4,]                 3 -3,76243938457499              0,01
+Type 3: with drift and trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,29561685800029              0,01
+[2,]                 1 -5,38511083489509              0,01
+[3,]                 2 -3,03703698826659  0,16203634725838
+[4,]                 3 -3,74110988986165  0,03345649605525
+---- 
+Note: in fact, p.value = 0.01 means p.value <= 0.01 
+KPSS Unit Root Test 
+alternative: nonstationary 
+ 
+Type 1: no drift no trend 
+              lag             stat          p.value
+                4 0,07480849041582              0,1
+----- 
+ Type 2: with drift no trend 
+              lag             stat          p.value
+                4 0,07395787852571              0,1
+----- 
+ Type 1: with drift and trend 
+             lag            stat         p.value
+               4 0,0613401326887             0,1
+----------- 
+Note: p.value = 0.01 means p.value <= 0.01 
+    : p.value = 0.10 means p.value >= 0.10 
+Augmented Dickey-Fuller Test 
+alternative: stationary 
+ 
+Type 1: no drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,48556731117975              0,01
+[2,]                 1 -5,53175437961554              0,01
+[3,]                 2 -3,16828034651548              0,01
+[4,]                 3 -3,82074912448708              0,01
+Type 2: with drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,39049554765301              0,01
+[2,]                 1 -5,45606925778391              0,01
+[3,]                 2  -3,1178345879606  0,03652217167834
+[4,]                 3 -3,76243938457499              0,01
+Type 3: with drift and trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,29561685800029              0,01
+[2,]                 1 -5,38511083489509              0,01
+[3,]                 2 -3,03703698826659  0,16203634725838
+[4,]                 3 -3,74110988986165  0,03345649605525
+---- 
+Note: in fact, p.value = 0.01 means p.value <= 0.01 
+KPSS Unit Root Test 
+alternative: nonstationary 
+ 
+Type 1: no drift no trend 
+              lag             stat          p.value
+                4 0,07480849041582              0,1
+----- 
+ Type 2: with drift no trend 
+              lag             stat          p.value
+                4 0,07395787852571              0,1
+----- 
+ Type 1: with drift and trend 
+             lag            stat         p.value
+               4 0,0613401326887             0,1
+----------- 
+Note: p.value = 0.01 means p.value <= 0.01 
+    : p.value = 0.10 means p.value >= 0.10 
+Augmented Dickey-Fuller Test 
+alternative: stationary 
+ 
+Type 1: no drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,48556731117975              0,01
+[2,]                 1 -5,53175437961554              0,01
+[3,]                 2 -3,16828034651548              0,01
+[4,]                 3 -3,82074912448708              0,01
+Type 2: with drift no trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,39049554765301              0,01
+[2,]                 1 -5,45606925778391              0,01
+[3,]                 2  -3,1178345879606  0,03652217167834
+[4,]                 3 -3,76243938457499              0,01
+Type 3: with drift and trend 
+                   lag               ADF           p.value
+[1,]                 0 -7,29561685800029              0,01
+[2,]                 1 -5,38511083489509              0,01
+[3,]                 2 -3,03703698826659  0,16203634725838
+[4,]                 3 -3,74110988986165  0,03345649605525
+---- 
+Note: in fact, p.value = 0.01 means p.value <= 0.01 
+KPSS Unit Root Test 
+alternative: nonstationary 
+ 
+Type 1: no drift no trend 
+              lag             stat          p.value
+                4 0,07480849041582              0,1
+----- 
+ Type 2: with drift no trend 
+              lag             stat          p.value
+                4 0,07395787852571              0,1
+----- 
+ Type 1: with drift and trend 
+             lag            stat         p.value
+               4 0,0613401326887             0,1
+----------- 
+Note: p.value = 0.01 means p.value <= 0.01 
+    : p.value = 0.10 means p.value >= 0.10 
