@@ -1,0 +1,91 @@
+ArkansasRiver           Soil Electrical Conductivity
+GeneralizedHyperbolic-package
+                        The Package 'GeneralizedHyperbolic': Summary
+                        Information
+RLambda                 Functions for Calculating Moments
+SandP500                S&P 500
+dghyp                   Generalized Hyperbolic Distribution
+dgig                    Generalized Inverse Gaussian Distribution
+dhyperb                 Hyperbolic Distribution
+dnig                    Normal Inverse Gaussian Distribution
+dskewlap                Skew-Laplace Distribution
+ghypCalcRange           Range of a Generalized Hyperbolic Distribution
+ghypChangePars          Change Parameterizations of the Generalized
+                        Hyperbolic Distribution
+ghypCheckPars           Check Parameters of the Generalized Hyperbolic
+                        Distribution
+ghypMean                Moments and Mode of the Generalized Hyperbolic
+                        Distribution
+ghypMom                 Calculate Moments of the Generalized Hyperbolic
+                        Distribution
+ghypParam               Parameter Sets for the Generalized Hyperbolic
+                        Distribution
+ghypScale               Rescale a generalized hyperbolic distribution
+gigCalcRange            Range of a Generalized Inverse Gaussian
+                        Distribution
+gigChangePars           Change Parameterizations of the Generalized
+                        Inverse Gaussian Distribution
+gigCheckPars            Check Parameters of the Generalized Inverse
+                        Gaussian Distribution
+gigFit                  Fit the Generalized Inverse Gausssian
+                        Distribution to Data
+gigFitStart             Find Starting Values for Fitting a Generalized
+                        Inverse Gaussian Distribution
+gigHessian              Calculate Two-Sided Hessian for the Generalized
+                        Inverse Gaussian Distribution
+gigMean                 Moments and Mode of the Generalized Inverse
+                        Gaussian Distribution
+gigMom                  Calculate Moments of the Generalized Inverse
+                        Gaussian Distribution
+gigParam                Parameter Sets for the Generalized Inverse
+                        Gaussian Distribution
+hyperbCalcRange         Range of a Hyperbolic Distribution
+hyperbChangePars        Change Parameterizations of the Hyperbolic
+                        Distribution
+hyperbCvMTest           Cramer-von~Mises Test of a Hyperbolic
+                        Distribution
+hyperbFit               Fit the Hyperbolic Distribution to Data
+hyperbFitStart          Find Starting Values for Fitting a Hyperbolic
+                        Distribution
+hyperbHessian           Calculate Two-Sided Hessian for the Hyperbolic
+                        Distribution
+hyperbMean              Moments and Mode of the Hyperbolic Distribution
+hyperbParam             Parameter Sets for the Hyperbolic Distribution
+hyperbWSqTable          Percentage Points for the Cramer-von Mises Test
+                        of the Hyperbolic Distribution
+hyperblm                Fitting Linear Models with Hyperbolic Errors
+mamquam                 Size of Gravels from Mamquam River
+momRecursion            Computes the moment coefficients recursively
+                        for generalized hyperbolic and related
+                        distributions
+nervePulse              Intervals Between Pulses Along a Nerve Fibre
+nigCalcRange            Range of a normal inverse Gaussian Distribution
+nigFit                  Fit the normal inverse Gaussian Distribution to
+                        Data
+nigFitStart             Find Starting Values for Fitting a normal
+                        inverse Gaussian Distribution
+nigHessian              Calculate Two-Sided Hessian for the Normal
+                        Inverse Gaussian Distribution
+nigMean                 Moments and Mode of the Normal Inverse Gaussian
+                        Distribution
+nigParam                Parameter Sets for the Normal Inverse Gaussian
+                        Distribution
+plotShapeTriangle       Plot the Shape Triangle
+qqghyp                  Generalized Hyperbolic Quantile-Quantile and
+                        Percent-Percent Plots
+qqgig                   Generalized Inverse Gaussian Quantile-Quantile
+                        and Percent-Percent Plots
+qqhyperb                Hyperbolic Quantile-Quantile and
+                        Percent-Percent Plots
+qqnig                   Normal inverse Gaussian Quantile-Quantile and
+                        Percent-Percent Plots
+qqskewlap               Skew-Laplace Quantile-Quantile and
+                        Percent-Percent Plots
+resistors               Resistance of One-half-ohm Resistors
+summary.gigFit          Summarizing Normal Inverse Gaussian
+                        Distribution Fit
+summary.hyperbFit       Summarizing Hyperbolic Distribution Fit
+summary.hyperblm        Summary Output of Hyperbolic Regression
+summary.nigFit          Summarizing Normal Inverse Gaussian
+                        Distribution Fit
+traffic                 Intervals Between Vehicles on a Road

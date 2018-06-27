@@ -1,0 +1,22 @@
+Chesapeake              Particle transport in Chesapeake Bay
+Mplot                   Functions for plotting matrices, or for
+                        splitting them and for maing suitable summaries
+OceanView-package       Functions for visualising oceanic data sets and
+                        model output.
+Syltsurf                Hydrodynamic model output (getm) of Sylt-Romo
+                        Bight
+TrackProf               Temperature profiles made along a ship track.
+WSnioz                  NIOZ monitoring data of Westerschelde estuary.
+db2cross                Converts a dataset from database-format to a
+                        cross table
+moviepersp3D            Plotting moving surfaces in 3D using rgl
+movieslice3D            Plotting volumetric data as moving slices in 3D
+                        using rgl
+quiver2D                Plots velocities as arrows or as trajectory
+                        plots.
+remap                   Functions for remapping, changing the
+                        resolution, and extracting from 2-D or 3-D
+                        data.
+tracers2D               Plots tracer distributions in 2-D.
+tracers3D               Plotting tracer distributions in 3D
+vectorplot              Vector velocity plot.

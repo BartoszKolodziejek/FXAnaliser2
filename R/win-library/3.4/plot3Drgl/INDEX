@@ -1,0 +1,7 @@
+cutrgl                  Cutting a rectangular region from an rgl plot.
+image2Drgl              2-D image, contour, scatterplots, segments and
+                        arrows in rgl.
+persp3Drgl              3-D plotting functions using rgl.
+plot3Drgl-package       Functions to plot multi-dimensional data using
+                        'rgl'.
+plotrgl                 Plot 3D graphs in rgl window.

@@ -1,0 +1,741 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>R: Univariate GARCH Models</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+<h1> Univariate GARCH Models
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;rugarch&rsquo; version 1.4-0</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<p style="text-align: center;">
+<a href="# "> </a>
+<a href="#A">A</a>
+<a href="#B">B</a>
+<a href="#C">C</a>
+<a href="#D">D</a>
+<a href="#E">E</a>
+<a href="#F">F</a>
+<a href="#G">G</a>
+<a href="#H">H</a>
+<a href="#I">I</a>
+<a href="#L">L</a>
+<a href="#M">M</a>
+<a href="#N">N</a>
+<a href="#P">P</a>
+<a href="#Q">Q</a>
+<a href="#R">R</a>
+<a href="#S">S</a>
+<a href="#U">U</a>
+<a href="#V">V</a>
+</p>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="rugarch-package.html">rugarch-package</a></td>
+<td>The rugarch package</td></tr>
+</table>
+
+<h2><a name="A">-- A --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="ARFIMA-class.html">ARFIMA-class</a></td>
+<td>class: High Level ARFIMA class</td></tr>
+<tr><td style="width: 25%;"><a href="arfimacv.html">arfimacv</a></td>
+<td>ARFIMAX time series cross validation</td></tr>
+<tr><td style="width: 25%;"><a href="arfimadistribution-methods.html">arfimadistribution</a></td>
+<td>function: ARFIMA Parameter Distribution via Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAdistribution-class.html">ARFIMAdistribution-class</a></td>
+<td>class: ARFIMA Parameter Distribution Class</td></tr>
+<tr><td style="width: 25%;"><a href="arfimadistribution-methods.html">arfimadistribution-method</a></td>
+<td>function: ARFIMA Parameter Distribution via Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="arfimadistribution-methods.html">arfimadistribution-methods</a></td>
+<td>function: ARFIMA Parameter Distribution via Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="arfimafilter-methods.html">arfimafilter</a></td>
+<td>function: ARFIMA Filtering</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfilter-class.html">ARFIMAfilter-class</a></td>
+<td>class: ARFIMA Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="arfimafilter-methods.html">arfimafilter-method</a></td>
+<td>function: ARFIMA Filtering</td></tr>
+<tr><td style="width: 25%;"><a href="arfimafilter-methods.html">arfimafilter-methods</a></td>
+<td>function: ARFIMA Filtering</td></tr>
+<tr><td style="width: 25%;"><a href="arfimafit-methods.html">arfimafit</a></td>
+<td>function: ARFIMA Fit</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfit-class.html">ARFIMAfit-class</a></td>
+<td>class: ARFIMA Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="arfimafit-methods.html">arfimafit-method</a></td>
+<td>function: ARFIMA Fit</td></tr>
+<tr><td style="width: 25%;"><a href="arfimafit-methods.html">arfimafit-methods</a></td>
+<td>function: ARFIMA Fit</td></tr>
+<tr><td style="width: 25%;"><a href="arfimaforecast-methods.html">arfimaforecast</a></td>
+<td>function: ARFIMA Forecasting</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAforecast-class.html">ARFIMAforecast-class</a></td>
+<td>class: ARFIMA Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="arfimaforecast-methods.html">arfimaforecast-method</a></td>
+<td>function: ARFIMA Forecasting</td></tr>
+<tr><td style="width: 25%;"><a href="arfimaforecast-methods.html">arfimaforecast-methods</a></td>
+<td>function: ARFIMA Forecasting</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultifilter-class.html">ARFIMAmultifilter-class</a></td>
+<td>class: ARFIMA Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultifit-class.html">ARFIMAmultifit-class</a></td>
+<td>class: ARFIMA Multiple Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultiforecast-class.html">ARFIMAmultiforecast-class</a></td>
+<td>class: ARFIMA Multiple Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultispec-class.html">ARFIMAmultispec-class</a></td>
+<td>class: ARFIMA Multiple Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="arfimapath-methods.html">arfimapath</a></td>
+<td>function: ARFIMA Path Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMApath-class.html">ARFIMApath-class</a></td>
+<td>class: ARFIMA Path Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="arfimapath-methods.html">arfimapath-method</a></td>
+<td>function: ARFIMA Path Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="arfimapath-methods.html">arfimapath-methods</a></td>
+<td>function: ARFIMA Path Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="arfimaroll-methods.html">arfimaroll</a></td>
+<td>function: ARFIMA Rolling Density Forecast and Backtesting</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAroll-class.html">ARFIMAroll-class</a></td>
+<td>class: ARFIMA Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="arfimaroll-methods.html">arfimaroll-method</a></td>
+<td>function: ARFIMA Rolling Density Forecast and Backtesting</td></tr>
+<tr><td style="width: 25%;"><a href="arfimaroll-methods.html">arfimaroll-methods</a></td>
+<td>function: ARFIMA Rolling Density Forecast and Backtesting</td></tr>
+<tr><td style="width: 25%;"><a href="arfimasim-methods.html">arfimasim</a></td>
+<td>function: ARFIMA Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAsim-class.html">ARFIMAsim-class</a></td>
+<td>class: ARFIMA Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="arfimasim-methods.html">arfimasim-method</a></td>
+<td>function: ARFIMA Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="arfimasim-methods.html">arfimasim-methods</a></td>
+<td>function: ARFIMA Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="arfimaspec-methods.html">arfimaspec</a></td>
+<td>function: ARFIMA Specification</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAspec-class.html">ARFIMAspec-class</a></td>
+<td>class: ARFIMA Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="arfimaspec-methods.html">arfimaspec-method</a></td>
+<td>function: ARFIMA Specification</td></tr>
+<tr><td style="width: 25%;"><a href="arfimaspec-methods.html">arfimaspec-methods</a></td>
+<td>function: ARFIMA Specification</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAdistribution-class.html">as.data.frame-method</a></td>
+<td>class: ARFIMA Parameter Distribution Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAroll-class.html">as.data.frame-method</a></td>
+<td>class: ARFIMA Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHboot-class.html">as.data.frame-method</a></td>
+<td>class: Univariate GARCH Bootstrap Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHdistribution-class.html">as.data.frame-method</a></td>
+<td>class: Univariate GARCH Parameter Distribution Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">as.data.frame-method</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="autoarfima.html">autoarfima</a></td>
+<td>Automatic Model Selection for ARFIMA models</td></tr>
+</table>
+
+<h2><a name="B">-- B --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="BerkowitzTest.html">BerkowitzTest</a></td>
+<td>Berkowitz Density Forecast Likelihood Ratio Test</td></tr>
+</table>
+
+<h2><a name="C">-- C --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="ARFIMAfilter-class.html">coef-method</a></td>
+<td>class: ARFIMA Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfit-class.html">coef-method</a></td>
+<td>class: ARFIMA Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultifilter-class.html">coef-method</a></td>
+<td>class: ARFIMA Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultifit-class.html">coef-method</a></td>
+<td>class: ARFIMA Multiple Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAroll-class.html">coef-method</a></td>
+<td>class: ARFIMA Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">coef-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">coef-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifilter-class.html">coef-method</a></td>
+<td>class: Univariate GARCH Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifit-class.html">coef-method</a></td>
+<td>class: Univariate GARCH Multiple Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">coef-method</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">confint-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">convergence</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfit-class.html">convergence-method</a></td>
+<td>class: ARFIMA Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">convergence-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">convergence-method</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+</table>
+
+<h2><a name="D">-- D --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="DACTest.html">DACTest</a></td>
+<td>Directional Accuracy Test</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchdist.html">ddist</a></td>
+<td>Distribution: rugarch distribution functions</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchdist.html">distplot</a></td>
+<td>Distribution: rugarch distribution functions</td></tr>
+<tr><td style="width: 25%;"><a href="dji30ret.html">dji30ret</a></td>
+<td>data: Dow Jones 30 Constituents Closing Value Log Return</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchdist.html">dkurtosis</a></td>
+<td>Distribution: rugarch distribution functions</td></tr>
+<tr><td style="width: 25%;"><a href="dmbp.html">dmbp</a></td>
+<td>data: Deutschemark/British pound Exchange Rate</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchdist.html">dskewness</a></td>
+<td>Distribution: rugarch distribution functions</td></tr>
+</table>
+
+<h2><a name="E">-- E --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="ESTest.html">ESTest</a></td>
+<td>Expected Shortfall Test.</td></tr>
+</table>
+
+<h2><a name="F">-- F --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="ugarchdist.html">fitdist</a></td>
+<td>Distribution: rugarch distribution functions</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfilter-class.html">fitted-method</a></td>
+<td>class: ARFIMA Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfit-class.html">fitted-method</a></td>
+<td>class: ARFIMA Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAforecast-class.html">fitted-method</a></td>
+<td>class: ARFIMA Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultifilter-class.html">fitted-method</a></td>
+<td>class: ARFIMA Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultifit-class.html">fitted-method</a></td>
+<td>class: ARFIMA Multiple Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultiforecast-class.html">fitted-method</a></td>
+<td>class: ARFIMA Multiple Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMApath-class.html">fitted-method</a></td>
+<td>class: ARFIMA Path Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAsim-class.html">fitted-method</a></td>
+<td>class: ARFIMA Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">fitted-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">fitted-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHforecast-class.html">fitted-method</a></td>
+<td>class: Univariate GARCH Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifilter-class.html">fitted-method</a></td>
+<td>class: Univariate GARCH Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifit-class.html">fitted-method</a></td>
+<td>class: Univariate GARCH Multiple Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultiforecast-class.html">fitted-method</a></td>
+<td>class: Univariate GARCH Multiple Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHpath-class.html">fitted-method</a></td>
+<td>class: Univariate GARCH Path Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHsim-class.html">fitted-method</a></td>
+<td>class: Univariate GARCH Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHforecast-class.html">fpm</a></td>
+<td>class: Univariate GARCH Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAforecast-class.html">fpm-method</a></td>
+<td>class: ARFIMA Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAroll-class.html">fpm-method</a></td>
+<td>class: ARFIMA Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHforecast-class.html">fpm-method</a></td>
+<td>class: Univariate GARCH Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">fpm-method</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="DateTimeUtilities.html">ftseq</a></td>
+<td>A small set of utilities to work with some time and date classes.</td></tr>
+</table>
+
+<h2><a name="G">-- G --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="GARCHboot-class.html">GARCHboot-class</a></td>
+<td>class: GARCH Bootstrap Class</td></tr>
+<tr><td style="width: 25%;"><a href="GARCHdistribution-class.html">GARCHdistribution-class</a></td>
+<td>class: GARCH Parameter Distribution Class</td></tr>
+<tr><td style="width: 25%;"><a href="GARCHfilter-class.html">GARCHfilter-class</a></td>
+<td>class: GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="GARCHfit-class.html">GARCHfit-class</a></td>
+<td>class: GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="GARCHforecast-class.html">GARCHforecast-class</a></td>
+<td>class: GARCH Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="GARCHpath-class.html">GARCHpath-class</a></td>
+<td>class: GARCH Path Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="GARCHroll-class.html">GARCHroll-class</a></td>
+<td>class: GARCH Roll Class</td></tr>
+<tr><td style="width: 25%;"><a href="GARCHsim-class.html">GARCHsim-class</a></td>
+<td>class: GARCH Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="GARCHspec-class.html">GARCHspec-class</a></td>
+<td>class: GARCH Spec Class</td></tr>
+<tr><td style="width: 25%;"><a href="GARCHtests-class.html">GARCHtests-class</a></td>
+<td>class: GARCH Tests Class</td></tr>
+<tr><td style="width: 25%;"><a href="DateTimeUtilities.html">generatefwd</a></td>
+<td>A small set of utilities to work with some time and date classes.</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">getspec</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfit-class.html">getspec-method</a></td>
+<td>class: ARFIMA Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">getspec-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ghyptransform.html">ghyptransform</a></td>
+<td>Distribution: Generalized Hyperbolic Transformation and Scaling</td></tr>
+<tr><td style="width: 25%;"><a href="GMMTest.html">GMMTest</a></td>
+<td>The GMM Orthogonality Test of Hansen</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">gof</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">gof-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">gof-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+</table>
+
+<h2><a name="H">-- H --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">halflife</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">halflife-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">halflife-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHspec-class.html">halflife-method</a></td>
+<td>class: Univariate GARCH Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="HLTest.html">HLTest</a></td>
+<td>The Non-Parametric Density Test of Hong and Li</td></tr>
+</table>
+
+<h2><a name="I">-- I --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">infocriteria</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfilter-class.html">infocriteria-method</a></td>
+<td>class: ARFIMA Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfit-class.html">infocriteria-method</a></td>
+<td>class: ARFIMA Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">infocriteria-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">infocriteria-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+</table>
+
+<h2><a name="L">-- L --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">likelihood</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfilter-class.html">likelihood-method</a></td>
+<td>class: ARFIMA Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfit-class.html">likelihood-method</a></td>
+<td>class: ARFIMA Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultifilter-class.html">likelihood-method</a></td>
+<td>class: ARFIMA Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultifit-class.html">likelihood-method</a></td>
+<td>class: ARFIMA Multiple Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">likelihood-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">likelihood-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifilter-class.html">likelihood-method</a></td>
+<td>class: Univariate GARCH Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifit-class.html">likelihood-method</a></td>
+<td>class: Univariate GARCH Multiple Fit Class</td></tr>
+</table>
+
+<h2><a name="M">-- M --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="mcs.html">mcsTest</a></td>
+<td>Model Confidence Set Test</td></tr>
+<tr><td style="width: 25%;"><a href="DateTimeUtilities.html">move</a></td>
+<td>A small set of utilities to work with some time and date classes.</td></tr>
+<tr><td style="width: 25%;"><a href="multifilter-methods.html">multifilter</a></td>
+<td>function: Univariate GARCH and ARFIMA Multiple Filtering</td></tr>
+<tr><td style="width: 25%;"><a href="multifilter-methods.html">multifilter-method</a></td>
+<td>function: Univariate GARCH and ARFIMA Multiple Filtering</td></tr>
+<tr><td style="width: 25%;"><a href="multifilter-methods.html">multifilter-methods</a></td>
+<td>function: Univariate GARCH and ARFIMA Multiple Filtering</td></tr>
+<tr><td style="width: 25%;"><a href="multifit-methods.html">multifit</a></td>
+<td>function: Univariate GARCH and ARFIMA Multiple Fitting</td></tr>
+<tr><td style="width: 25%;"><a href="multifit-methods.html">multifit-method</a></td>
+<td>function: Univariate GARCH and ARFIMA Multiple Fitting</td></tr>
+<tr><td style="width: 25%;"><a href="multifit-methods.html">multifit-methods</a></td>
+<td>function: Univariate GARCH and ARFIMA Multiple Fitting</td></tr>
+<tr><td style="width: 25%;"><a href="multiforecast-methods.html">multiforecast</a></td>
+<td>function: Univariate GARCH and ARFIMA Multiple Forecasting</td></tr>
+<tr><td style="width: 25%;"><a href="multiforecast-methods.html">multiforecast-method</a></td>
+<td>function: Univariate GARCH and ARFIMA Multiple Forecasting</td></tr>
+<tr><td style="width: 25%;"><a href="multiforecast-methods.html">multiforecast-methods</a></td>
+<td>function: Univariate GARCH and ARFIMA Multiple Forecasting</td></tr>
+<tr><td style="width: 25%;"><a href="multispec-methods.html">multispec</a></td>
+<td>function: Univariate multiple GARCH Specification</td></tr>
+<tr><td style="width: 25%;"><a href="multispec-methods.html">multispec-method</a></td>
+<td>function: Univariate multiple GARCH Specification</td></tr>
+<tr><td style="width: 25%;"><a href="multispec-methods.html">multispec-methods</a></td>
+<td>function: Univariate multiple GARCH Specification</td></tr>
+</table>
+
+<h2><a name="N">-- N --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">newsimpact</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">newsimpact-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">newsimpact-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">nyblom</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">nyblom-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+</table>
+
+<h2><a name="P">-- P --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="ugarchdist.html">pdist</a></td>
+<td>Distribution: rugarch distribution functions</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">persistence</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">persistence-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">persistence-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHspec-class.html">persistence-method</a></td>
+<td>class: Univariate GARCH Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">pit</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">pit-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">pit-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">pit-method</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHboot-class.html">plot-method</a></td>
+<td>class: Univariate GARCH Bootstrap Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHdistribution-class.html">plot-method</a></td>
+<td>class: Univariate GARCH Parameter Distribution Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">plot-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">plot-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHforecast-class.html">plot-method</a></td>
+<td>class: Univariate GARCH Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHpath-class.html">plot-method</a></td>
+<td>class: Univariate GARCH Path Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">plot-method</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHsim-class.html">plot-method</a></td>
+<td>class: Univariate GARCH Simulation Class</td></tr>
+</table>
+
+<h2><a name="Q">-- Q --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="ugarchdist.html">qdist</a></td>
+<td>Distribution: rugarch distribution functions</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">quantile-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">quantile-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHforecast-class.html">quantile-method</a></td>
+<td>class: Univariate GARCH Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHpath-class.html">quantile-method</a></td>
+<td>class: Univariate GARCH Path Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">quantile-method</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHsim-class.html">quantile-method</a></td>
+<td>class: Univariate GARCH Simulation Class</td></tr>
+</table>
+
+<h2><a name="R">-- R --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="ugarchdist.html">rdist</a></td>
+<td>Distribution: rugarch distribution functions</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">reduce</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfit-class.html">reduce-method</a></td>
+<td>class: ARFIMA Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">reduce-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">report</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAroll-class.html">report-method</a></td>
+<td>class: ARFIMA Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">report-method</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfilter-class.html">residuals-method</a></td>
+<td>class: ARFIMA Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfit-class.html">residuals-method</a></td>
+<td>class: ARFIMA Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultifilter-class.html">residuals-method</a></td>
+<td>class: ARFIMA Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultifit-class.html">residuals-method</a></td>
+<td>class: ARFIMA Multiple Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">residuals-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">residuals-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifilter-class.html">residuals-method</a></td>
+<td>class: Univariate GARCH Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifit-class.html">residuals-method</a></td>
+<td>class: Univariate GARCH Multiple Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">resume</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAroll-class.html">resume-method</a></td>
+<td>class: ARFIMA Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">resume-method</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="rGARCH-class.html">rGARCH-class</a></td>
+<td>class: rGARCH Class</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchdist.html">rgarchdist</a></td>
+<td>Distribution: rugarch distribution functions</td></tr>
+<tr><td style="width: 25%;"><a href="rugarch-package.html">rugarch</a></td>
+<td>The rugarch package</td></tr>
+</table>
+
+<h2><a name="S">-- S --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="uGARCHspec-class.html">setbounds&lt;-</a></td>
+<td>class: Univariate GARCH Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAspec-class.html">setbounds&lt;--method</a></td>
+<td>class: ARFIMA Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHspec-class.html">setbounds&lt;--method</a></td>
+<td>class: Univariate GARCH Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHspec-class.html">setfixed&lt;-</a></td>
+<td>class: Univariate GARCH Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAspec-class.html">setfixed&lt;--method</a></td>
+<td>class: ARFIMA Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHspec-class.html">setfixed&lt;--method</a></td>
+<td>class: Univariate GARCH Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHspec-class.html">setstart&lt;-</a></td>
+<td>class: Univariate GARCH Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAspec-class.html">setstart&lt;--method</a></td>
+<td>class: ARFIMA Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHspec-class.html">setstart&lt;--method</a></td>
+<td>class: Univariate GARCH Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAdistribution-class.html">show-method</a></td>
+<td>class: ARFIMA Parameter Distribution Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfilter-class.html">show-method</a></td>
+<td>class: ARFIMA Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfit-class.html">show-method</a></td>
+<td>class: ARFIMA Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAforecast-class.html">show-method</a></td>
+<td>class: ARFIMA Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultifilter-class.html">show-method</a></td>
+<td>class: ARFIMA Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultifit-class.html">show-method</a></td>
+<td>class: ARFIMA Multiple Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultiforecast-class.html">show-method</a></td>
+<td>class: ARFIMA Multiple Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAmultispec-class.html">show-method</a></td>
+<td>class: ARFIMA Multiple Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMApath-class.html">show-method</a></td>
+<td>class: ARFIMA Path Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAroll-class.html">show-method</a></td>
+<td>class: ARFIMA Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAsim-class.html">show-method</a></td>
+<td>class: ARFIMA Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAspec-class.html">show-method</a></td>
+<td>class: ARFIMA Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHboot-class.html">show-method</a></td>
+<td>class: Univariate GARCH Bootstrap Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHdistribution-class.html">show-method</a></td>
+<td>class: Univariate GARCH Parameter Distribution Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">show-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">show-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHforecast-class.html">show-method</a></td>
+<td>class: Univariate GARCH Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifilter-class.html">show-method</a></td>
+<td>class: Univariate GARCH Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifit-class.html">show-method</a></td>
+<td>class: Univariate GARCH Multiple Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultiforecast-class.html">show-method</a></td>
+<td>class: Univariate GARCH Multiple Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultispec-class.html">show-method</a></td>
+<td>class: Univariate GARCH Multiple Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHpath-class.html">show-method</a></td>
+<td>class: Univariate GARCH Path Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">show-method</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHsim-class.html">show-method</a></td>
+<td>class: Univariate GARCH Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHspec-class.html">show-method</a></td>
+<td>class: Univariate GARCH Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">sigma</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">sigma-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">sigma-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHforecast-class.html">sigma-method</a></td>
+<td>class: Univariate GARCH Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifilter-class.html">sigma-method</a></td>
+<td>class: Univariate GARCH Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifit-class.html">sigma-method</a></td>
+<td>class: Univariate GARCH Multiple Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultiforecast-class.html">sigma-method</a></td>
+<td>class: Univariate GARCH Multiple Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHpath-class.html">sigma-method</a></td>
+<td>class: Univariate GARCH Path Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHsim-class.html">sigma-method</a></td>
+<td>class: Univariate GARCH Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">signbias</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">signbias-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">signbias-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">signbias-methods</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchdist.html">skdomain</a></td>
+<td>Distribution: rugarch distribution functions</td></tr>
+<tr><td style="width: 25%;"><a href="sp500ret.html">sp500ret</a></td>
+<td>data: Standard and Poors 500 Closing Value Log Return</td></tr>
+<tr><td style="width: 25%;"><a href="spyreal.html">spyreal</a></td>
+<td>data: SPDR Standard and Poors 500 Open-Close Daily Return and Realized Kernel Volatility</td></tr>
+</table>
+
+<h2><a name="U">-- U --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="ugarchbench.html">ugarchbench</a></td>
+<td>Benchmark: The Benchmark Test Suite</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchboot-methods.html">ugarchboot</a></td>
+<td>function: Univariate GARCH Forecast via Bootstrap</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHboot-class.html">uGARCHboot-class</a></td>
+<td>class: Univariate GARCH Bootstrap Class</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchboot-methods.html">ugarchboot-method</a></td>
+<td>function: Univariate GARCH Forecast via Bootstrap</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchboot-methods.html">ugarchboot-methods</a></td>
+<td>function: Univariate GARCH Forecast via Bootstrap</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchdistribution-methods.html">ugarchdistribution</a></td>
+<td>function: Univariate GARCH Parameter Distribution via Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHdistribution-class.html">uGARCHdistribution-class</a></td>
+<td>class: Univariate GARCH Parameter Distribution Class</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchdistribution-methods.html">ugarchdistribution-method</a></td>
+<td>function: Univariate GARCH Parameter Distribution via Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchdistribution-methods.html">ugarchdistribution-methods</a></td>
+<td>function: Univariate GARCH Parameter Distribution via Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchfilter-methods.html">ugarchfilter</a></td>
+<td>function: Univariate GARCH Filtering</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">uGARCHfilter-class</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchfilter-methods.html">ugarchfilter-method</a></td>
+<td>function: Univariate GARCH Filtering</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchfilter-methods.html">ugarchfilter-methods</a></td>
+<td>function: Univariate GARCH Filtering</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchfit-methods.html">ugarchfit</a></td>
+<td>function: Univariate GARCH Fitting</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">uGARCHfit-class</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchfit-methods.html">ugarchfit-method</a></td>
+<td>function: Univariate GARCH Fitting</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchfit-methods.html">ugarchfit-methods</a></td>
+<td>function: Univariate GARCH Fitting</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchforecast-methods.html">ugarchforecast</a></td>
+<td>function: Univariate GARCH Forecasting</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHforecast-class.html">uGARCHforecast-class</a></td>
+<td>class: Univariate GARCH Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchforecast-methods.html">ugarchforecast-method</a></td>
+<td>function: Univariate GARCH Forecasting</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchforecast-methods.html">ugarchforecast-methods</a></td>
+<td>function: Univariate GARCH Forecasting</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifilter-class.html">uGARCHmultifilter-class</a></td>
+<td>class: Univariate GARCH Multiple Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultifit-class.html">uGARCHmultifit-class</a></td>
+<td>class: Univariate GARCH Multiple Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultiforecast-class.html">uGARCHmultiforecast-class</a></td>
+<td>class: Univariate GARCH Multiple Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHmultispec-class.html">uGARCHmultispec-class</a></td>
+<td>class: Univariate GARCH Multiple Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchpath-methods.html">ugarchpath</a></td>
+<td>function: Univariate GARCH Path Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHpath-class.html">uGARCHpath-class</a></td>
+<td>class: Univariate GARCH Path Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchpath-methods.html">ugarchpath-method</a></td>
+<td>function: Univariate GARCH Path Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchpath-methods.html">ugarchpath-methods</a></td>
+<td>function: Univariate GARCH Path Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchroll-methods.html">ugarchroll</a></td>
+<td>function: Univariate GARCH Rolling Density Forecast and Backtesting</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHroll-class.html">uGARCHroll-class</a></td>
+<td>class: Univariate GARCH Rolling Forecast Class</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchroll-methods.html">ugarchroll-method</a></td>
+<td>function: Univariate GARCH Rolling Density Forecast and Backtesting</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchroll-methods.html">ugarchroll-methods</a></td>
+<td>function: Univariate GARCH Rolling Density Forecast and Backtesting</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchsim-methods.html">ugarchsim</a></td>
+<td>function: Univariate GARCH Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHsim-class.html">uGARCHsim-class</a></td>
+<td>class: Univariate GARCH Simulation Class</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchsim-methods.html">ugarchsim-method</a></td>
+<td>function: Univariate GARCH Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchsim-methods.html">ugarchsim-methods</a></td>
+<td>function: Univariate GARCH Simulation</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchspec-methods.html">ugarchspec</a></td>
+<td>function: Univariate GARCH Specification</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHspec-class.html">uGARCHspec-class</a></td>
+<td>class: Univariate GARCH Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchspec-methods.html">ugarchspec-method</a></td>
+<td>function: Univariate GARCH Specification</td></tr>
+<tr><td style="width: 25%;"><a href="ugarchspec-methods.html">ugarchspec-methods</a></td>
+<td>function: Univariate GARCH Specification</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">uncmean</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfilter-class.html">uncmean-method</a></td>
+<td>class: ARFIMA Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfit-class.html">uncmean-method</a></td>
+<td>class: ARFIMA Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAspec-class.html">uncmean-method</a></td>
+<td>class: ARFIMA Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">uncmean-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">uncmean-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHspec-class.html">uncmean-method</a></td>
+<td>class: Univariate GARCH Specification Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">uncvariance</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfilter-class.html">uncvariance-method</a></td>
+<td>class: Univariate GARCH Filter Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">uncvariance-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHspec-class.html">uncvariance-method</a></td>
+<td>class: Univariate GARCH Specification Class</td></tr>
+</table>
+
+<h2><a name="V">-- V --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="VaRDurTest.html">VaRDurTest</a></td>
+<td>VaR Duration Test</td></tr>
+<tr><td style="width: 25%;"><a href="VaRloss.html">VaRloss</a></td>
+<td>Value at Risk loss function of Gonzalez-Rivera, Lee, and Mishra (2004)</td></tr>
+<tr><td style="width: 25%;"><a href="VaRplot.html">VaRplot</a></td>
+<td>Value at Risk Exceedances plot</td></tr>
+<tr><td style="width: 25%;"><a href="VaRTest.html">VaRTest</a></td>
+<td>Value at Risk Exceedances Test</td></tr>
+<tr><td style="width: 25%;"><a href="ARFIMAfit-class.html">vcov-method</a></td>
+<td>class: ARFIMA Fit Class</td></tr>
+<tr><td style="width: 25%;"><a href="uGARCHfit-class.html">vcov-method</a></td>
+<td>class: Univariate GARCH Fit Class</td></tr>
+</table>
+</body></html>

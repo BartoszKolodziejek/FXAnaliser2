@@ -1,0 +1,108 @@
+ARFIMA-class            class: High Level ARFIMA class
+ARFIMAdistribution-class
+                        class: ARFIMA Parameter Distribution Class
+ARFIMAfilter-class      class: ARFIMA Filter Class
+ARFIMAfit-class         class: ARFIMA Fit Class
+ARFIMAforecast-class    class: ARFIMA Forecast Class
+ARFIMAmultifilter-class
+                        class: ARFIMA Multiple Filter Class
+ARFIMAmultifit-class    class: ARFIMA Multiple Fit Class
+ARFIMAmultiforecast-class
+                        class: ARFIMA Multiple Forecast Class
+ARFIMAmultispec-class   class: ARFIMA Multiple Specification Class
+ARFIMApath-class        class: ARFIMA Path Simulation Class
+ARFIMAroll-class        class: ARFIMA Rolling Forecast Class
+ARFIMAsim-class         class: ARFIMA Simulation Class
+ARFIMAspec-class        class: ARFIMA Specification Class
+BerkowitzTest           Berkowitz Density Forecast Likelihood Ratio
+                        Test
+DACTest                 Directional Accuracy Test
+ESTest                  Expected Shortfall Test.
+GARCHboot-class         class: GARCH Bootstrap Class
+GARCHdistribution-class
+                        class: GARCH Parameter Distribution Class
+GARCHfilter-class       class: GARCH Filter Class
+GARCHfit-class          class: GARCH Fit Class
+GARCHforecast-class     class: GARCH Forecast Class
+GARCHpath-class         class: GARCH Path Simulation Class
+GARCHroll-class         class: GARCH Roll Class
+GARCHsim-class          class: GARCH Simulation Class
+GARCHspec-class         class: GARCH Spec Class
+GARCHtests-class        class: GARCH Tests Class
+GMMTest                 The GMM Orthogonality Test of Hansen
+HLTest                  The Non-Parametric Density Test of Hong and Li
+VaRDurTest              VaR Duration Test
+VaRTest                 Value at Risk Exceedances Test
+VaRloss                 Value at Risk loss function of Gonzalez-Rivera,
+                        Lee, and Mishra (2004)
+VaRplot                 Value at Risk Exceedances plot
+arfimacv                ARFIMAX time series cross validation
+arfimadistribution-methods
+                        function: ARFIMA Parameter Distribution via
+                        Simulation
+arfimafilter-methods    function: ARFIMA Filtering
+arfimafit-methods       function: ARFIMA Fit
+arfimaforecast-methods
+                        function: ARFIMA Forecasting
+arfimapath-methods      function: ARFIMA Path Simulation
+arfimaroll-methods      function: ARFIMA Rolling Density Forecast and
+                        Backtesting
+arfimasim-methods       function: ARFIMA Simulation
+arfimaspec-methods      function: ARFIMA Specification
+autoarfima              Automatic Model Selection for ARFIMA models
+dji30ret                data: Dow Jones 30 Constituents Closing Value
+                        Log Return
+dmbp                    data: Deutschemark/British pound Exchange Rate
+ghyptransform           Distribution: Generalized Hyperbolic
+                        Transformation and Scaling
+mcsTest                 Model Confidence Set Test
+move                    A small set of utilities to work with some time
+                        and date classes.
+multifilter-methods     function: Univariate GARCH and ARFIMA Multiple
+                        Filtering
+multifit-methods        function: Univariate GARCH and ARFIMA Multiple
+                        Fitting
+multiforecast-methods   function: Univariate GARCH and ARFIMA Multiple
+                        Forecasting
+multispec-methods       function: Univariate multiple GARCH
+                        Specification
+rGARCH-class            class: rGARCH Class
+rgarchdist              Distribution: rugarch distribution functions
+rugarch-package         The rugarch package
+sp500ret                data: Standard and Poors 500 Closing Value Log
+                        Return
+spyreal                 data: SPDR Standard and Poors 500 Open-Close
+                        Daily Return and Realized Kernel Volatility
+uGARCHboot-class        class: Univariate GARCH Bootstrap Class
+uGARCHdistribution-class
+                        class: Univariate GARCH Parameter Distribution
+                        Class
+uGARCHfilter-class      class: Univariate GARCH Filter Class
+uGARCHfit-class         class: Univariate GARCH Fit Class
+uGARCHforecast-class    class: Univariate GARCH Forecast Class
+uGARCHmultifilter-class
+                        class: Univariate GARCH Multiple Filter Class
+uGARCHmultifit-class    class: Univariate GARCH Multiple Fit Class
+uGARCHmultiforecast-class
+                        class: Univariate GARCH Multiple Forecast Class
+uGARCHmultispec-class   class: Univariate GARCH Multiple Specification
+                        Class
+uGARCHpath-class        class: Univariate GARCH Path Simulation Class
+uGARCHroll-class        class: Univariate GARCH Rolling Forecast Class
+uGARCHsim-class         class: Univariate GARCH Simulation Class
+uGARCHspec-class        class: Univariate GARCH Specification Class
+ugarchbench             Benchmark: The Benchmark Test Suite
+ugarchboot-methods      function: Univariate GARCH Forecast via
+                        Bootstrap
+ugarchdistribution-methods
+                        function: Univariate GARCH Parameter
+                        Distribution via Simulation
+ugarchfilter-methods    function: Univariate GARCH Filtering
+ugarchfit-methods       function: Univariate GARCH Fitting
+ugarchforecast-methods
+                        function: Univariate GARCH Forecasting
+ugarchpath-methods      function: Univariate GARCH Path Simulation
+ugarchroll-methods      function: Univariate GARCH Rolling Density
+                        Forecast and Backtesting
+ugarchsim-methods       function: Univariate GARCH Simulation
+ugarchspec-methods      function: Univariate GARCH Specification

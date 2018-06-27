@@ -42,12 +42,16 @@ public class RequestController {
     @Value("${R.Log}")
     private String RLog;
 
+
+
+
     @RequestMapping(value = "prognose_variance_and_expected_payoff", method = RequestMethod.GET)
-    public Map<Long, Map<String, String>> prognoseVarianceAndExpectedPayOff(@RequestParam String strategy, @RequestParam String symbol ){
+    public Map<String, String> prognoseVarianceAndExpectedPayOff(@RequestParam String strategy, @RequestParam String symbol, @RequestParam String toDate ){
 
         Map<String, String> params = new HashMap<>();
         params.put("strategy", strategy);
         params.put("symbol", symbol);
+        params.put("todate", toDate);
         Map<String, String> results = new HashMap<>();
         try {
             Map<Integer, String> dataset = new ObjectMapper().readValue(WebQuerySender.getInstance().getJson("http://localhost:8090", params, "getdata").toString(), HashMap.class);
@@ -55,18 +59,38 @@ public class RequestController {
             dataset.values().forEach(r -> returns.add((new BigDecimal(r)).doubleValue()));
             Double[] set = new Double[returns.size()];
             returns.toArray(set);
+            double expected_payoff;
+            double variance;
            if (statistician.isStationary(set)){
-               Rengine rengine = new Rengine(new String[] { "--no-save" }, false, null);
-               rengine.eval("install.packages(\"forecast\");");
-               rengine.eval("library(forecast)");
-               rengine.assign("x", ArrayUtils.toPrimitive(set));
-               rengine.eval("auto.arima(x)");
+                expected_payoff = statistician.prognoseLogReturn(set);
+        }
+           else {
+               expected_payoff = statistician.prognoseLogReturn(set);
+           }
+           if (statistician.isArch(set)){
+               variance = statistician.progoseVariance(set);
+               if (variance <= 0){
+                   engine.put("dataset", set);
+                   Double var = ((SEXP) engine.eval("var <- var(dataset);")).asReal();
+                   variance = var.doubleValue();
+               }
+
            }
            else {
-
+               engine.put("dataset", set);
+               Double var = ((SEXP) engine.eval("var <- var(dataset);")).asReal();
+               variance = var.doubleValue();
            }
 
-
+           Map<String, String> mean_and_var = getMeanAndVariance(strategy, symbol, toDate);
+            if(expected_payoff!=0)
+            results.put("e_payoff", Double.toString(expected_payoff));
+           else
+                results.put("e_payoff", mean_and_var.get("mean"));
+            if (variance!=0)
+            results.put("var", Double.toString(variance));
+            else
+                results.put("e_payoff", mean_and_var.get("var"));
 
         } catch (JsonParseException e) {
             e.printStackTrace();
@@ -74,15 +98,19 @@ public class RequestController {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (ScriptException e) {
+            e.printStackTrace();
         }
-        return new HashMap<>();
+
+        return results;
     }
 
     @RequestMapping(value = "/calculate_mean_and_variance", method = RequestMethod.GET)
-    public Map<String, String> getMeanAndVariance(@RequestParam String strategy, @RequestParam String symbol ){
+    public Map<String, String> getMeanAndVariance(@RequestParam String strategy, @RequestParam String symbol, @RequestParam String  toDate){
         Map<String, String> params = new HashMap<>();
         params.put("strategy", strategy);
         params.put("symbol", symbol);
+        params.put("todate", toDate);
         Map<String, String> results = new HashMap<>();
         try {
             Map<Integer, String> dataset = new ObjectMapper().readValue(WebQuerySender.getInstance().getJson("http://localhost:8090", params, "getdata").toString(), HashMap.class);
@@ -113,7 +141,9 @@ public class RequestController {
        Map<String, String> results = new HashMap<>();
        results.put("balance", new BigDecimal(before).add(new BigDecimal(status)).toString());
        BigDecimal after = new BigDecimal(before).add(new BigDecimal(status));
+       if(after.compareTo(new BigDecimal(0))>0)
        results.put("effect", Double.toString(Math.log(after.divide(new BigDecimal(before), 5, RoundingMode.HALF_DOWN).doubleValue())));
+       else  results.put("effect", Double.toString(Math.log((new BigDecimal(0.1)).divide(new BigDecimal(before), 5, RoundingMode.HALF_DOWN).doubleValue())));
        return results;
    }
 
@@ -127,7 +157,7 @@ public class RequestController {
     @RequestMapping(value = "/calculate_point", method = RequestMethod.GET)
     public Map<String, String> getPoint(@RequestParam String size, @RequestParam String rate, @RequestParam String step){
         Map<String,String> result = new HashMap<>();
-        BigDecimal point = ((new BigDecimal(size)).multiply(new BigDecimal(rate))).multiply(new BigDecimal(100000)).multiply(new BigDecimal(step));
+        BigDecimal point = ((new BigDecimal(size)).multiply(new BigDecimal(rate))).multiply(new BigDecimal(step));
         result.put("point", point.toString());
         return result;
     }

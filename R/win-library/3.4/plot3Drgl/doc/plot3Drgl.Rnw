@@ -1,0 +1,256 @@
+\documentclass[article,nojss]{jss}
+\DeclareGraphicsExtensions{.pdf,.eps,.png}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Add-on packages and fonts
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+
+\newcommand{\noun}[1]{\textsc{#1}}
+%% Bold symbol macro for standard LaTeX users
+\providecommand{\boldsymbol}[1]{\mbox{\boldmath $#1$}}
+
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\newcommand{\p}{\textbf{\textsf{plot3Drgl }}}
+\newcommand{\R}{\proglang{R}}
+\title{
+  \p: Tools for plotting 3-D and 2-D data in openGL.
+}
+\Plaintitle{plot3D}
+
+\Keywords{
+  plot,  persp, image, 2-D, 3-D, scatter plots, surface plots, slice plots,
+  openGL, \proglang{R}
+}
+
+\Plainkeywords{
+  plot,  persp, image, 2-D, 3-D, scatter plots, surface plots, slice plots,
+  openGL, R
+}
+
+
+\author{Karline Soetaert\\
+NIOZ-Yerseke\\
+The Netherlands
+}
+
+\Plainauthor{Karline Soetaert}
+
+\Abstract{
+  \R{ }package \p \citep{plot3Drgl} contains functions for plotting multi-dimensional
+  data in openGl, based on functions as in \pkg{plot3D} \citep{plot3D}.
+
+  A related package that depends on \pkg{plot3Drgl}is \pkg{OceanView} \citep{OceanView}
+  which contains functions for visualing oceanographic data.
+}
+
+%% The address of (at least) one author should be given
+%% in the following format:
+\Address{
+  Karline Soetaert\\
+  Royal Netherlands Institute of Sea Research (NIOZ)\\
+  4401 NT Yerseke, Netherlands\\
+  E-mail: \email{karline.soetaert@nioz.nl}\\
+  URL: \url{http://http://www.nioz.nl/}\\
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% R/Sweave specific LaTeX commands.
+%% need no \usepackage{Sweave}
+%\VignetteIndexEntry{plot3Drgl: functions for plotting 3-D and 2-D data in openGL}
+%\VignetteKeywords{plot, persp, image, 2-D, 3-D, scatter, surface plots, slice plots}
+%\VignettePackage{plot3D}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Begin of the document
+\begin{document}
+\SweaveOpts{engine=R,eps=FALSE}
+\SweaveOpts{keep.source=TRUE}
+
+<<preliminaries,echo=FALSE,results=hide>>=
+library(plot3Drgl)
+options(prompt = " ")
+options(continue = "  ")
+options(width=75)
+@
+
+\maketitle
+
+\section{Introduction}
+
+The \R{ } package \pkg{plot3D} \citep{plot3D} provides functions for plotting 2- and 3-D data.
+Package \p allows to plot these functions also in openGL, as made available by package \pkg{rgl} \citep{rgl}.
+
+One possibility is to first create a plot in base R-graphics, and then use function \code{plotrgl}
+to depict the same figure in rgl. 
+
+The main advantage of rgl over base graphics is
+that it allows to interactively rotate, zoom, and shift the graphics,
+and even select regions. However, in contrast to the base R plot functions in \pkg{plot3D},
+it is not possible to plot a colorkey.
+
+\section{Function plotrgl}
+Typically I start by making a 3D plot using functions from package \pkg{plot3D}.
+Although not necessary, plotting can be postponed by setting argument \code{plot = FALSE}
+<<>>=
+persp3D(z = volcano, plot = FALSE)
+@
+The figure is then plotting in openGL by function \code{plotrgl}, whose arguments are:
+<<>>=
+args(plotrgl)
+@
+Here the \code{...} are any parameter that would be passed to \pkg{rgl} functions
+\code{par3d}, \code{open3d} or \code{material3d}.
+
+Argument \code{smooth} adds Gouraud shading, while \code{lighting} adds a light source.
+<<fig=true, grdevice=rgl.Sweave, pdf=false, width = 6, height = 6, resolution = 50>>=
+plotrgl(smooth = TRUE, lighting = TRUE)
+@
+
+Now you can use the left mouse key to rotate the plot, the middle mouse key to move it,
+and the right key to zoom. You may also want to try function \code{cutrgl},
+which allows to cut parts of the plot.
+
+An alternative, shorter version to do the same is:
+\begin{verbatim}
+persp3Drgl(z = volcano, smooth = TRUE, lighting = TRUE)
+
+\end{verbatim}
+\setkeys{Gin}{width=0.6\textwidth}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics{volcanocut.png}
+\end{center}
+\label{fig:volcano}
+\caption{The volcano, after a region has been cutted}
+\end{figure}
+
+Function \code{croprgl} can be used to adapt the ranges (not shown)
+
+\begin{verbatim}
+cutrgl()                      # requires selection using left mouse
+croprgl(xlim = c(0.2, 0.8))
+uncutrgl()                    # restores original plot
+\end{verbatim}
+
+The same figure in base R-graphics looks less nice but has a colorkey:
+
+<<label=volcano,include=FALSE>>=
+plotdev(shade = 0.1)
+@
+
+\setkeys{Gin}{width=0.6\textwidth}
+\begin{figure}
+\begin{center}
+<<label=volcano,fig=TRUE,echo=FALSE, pdf = FALSE, png = TRUE>>=
+<<volcano>>
+@
+\end{center}
+\caption{The volcano, using base R graphics}
+\label{fig:volcano}
+\end{figure}
+
+\section{scatter plot example}
+A linear regression of the mtcars data can be easily plotted both in base graphics and using rgl:
+<<>>=
+attach(mtcars)
+fit <- lm(mpg ~ wt + disp)
+
+# predict values on regular xy grid
+wt.pred <- seq(1.5, 5.5, length.out = 30)
+disp.pred <- seq(71, 472, length.out = 30)
+xy <- expand.grid(wt = wt.pred,
+                  disp = disp.pred)
+
+mpg.pred <- matrix (nrow = 30, ncol = 30,
+    data = predict(fit, newdata = data.frame(xy),
+    interval = "prediction"))
+
+# fitted points for droplines to surface
+fitpoints <- predict(fit)
+@
+<<label=fit,include=FALSE>>=
+scatter3D(z = mpg, x = wt, y = disp, colvar = abs(mpg - fitpoints),
+      pch = 18, cex = 2, theta = 20, phi = 20, ticktype = "detailed",
+      xlab = "wt", ylab = "disp", zlab = "mpg", main = "mtcars",
+      clab = "error", zlim = c(5, 35),
+      surf = list(x = wt.pred, y = disp.pred, z = mpg.pred,
+                  facets = NA, border = "black", fit = fitpoints)
+      )
+@
+
+\setkeys{Gin}{width=0.6\textwidth}
+\begin{figure}
+\begin{center}
+<<label=fit,fig=TRUE,echo=FALSE, pdf = FALSE, png = TRUE>>=
+<<fit>>
+@
+\end{center}
+\label{fig:mtcars fit}
+\end{figure}
+<<>>=
+detach(mtcars)
+@
+
+<<fig=true, grdevice=rgl.Sweave, pdf=false, width = 6, height = 6, resolution = 50>>=
+plotrgl(new = FALSE)
+@
+
+\section{isosurfaces}
+Function \code{isosurf3D} from \pkg{plot3D} creates surfaces of equal scalar
+value from a volumetric data set. 
+It makes use of a function from package \pkg{misc3d} \citep{misc3d}.
+
+If we depict several isosurfaces, it is best to use transparent colors by setting
+argument \code{alpha} smaller than 1. Plotting transparent surfaces is very slow in
+base graphics, but not so in openGL.
+<<>>=
+ x <- y <- z <- seq(-2, 2, length.out = 15)
+ xyz <- mesh(x, y, z)
+ F <- with(xyz, log(x^2 + y^2 + z^2 +
+                10*(x^2 + y^2) * (y^2 + z^2) ^2))
+
+# three levels, transparency added
+ isosurf3D(x, y, z, F, level = seq(0, 4, by = 2),
+   col = c("red", "blue", "yellow"),
+   clab = "F", alpha = 0.2, plot = FALSE)
+@
+<<label=iso,include=FALSE>>=
+plotdev()
+@
+
+\setkeys{Gin}{width=0.6\textwidth}
+\begin{figure}
+\begin{center}
+<<label=iso,fig=TRUE,echo=FALSE, pdf = FALSE, png = TRUE>>=
+<<iso>>
+@
+\end{center}
+\end{figure}
+<<fig=true, grdevice=rgl.Sweave, pdf=false, width = 6, height = 6, resolution = 50>>=
+plotrgl(new = FALSE, lighting = TRUE)
+@
+
+\section{Issues}
+\begin{itemize}
+ \item Sometimes the axes are not drawn in \code{rgl} plots.
+  If you want axes, just type
+\begin{verbatim}
+decorate3d()
+\end{verbatim}
+  \item The package contains a function to visualise arrows in rgl as cones.
+  But it has a flaw, as the arrows are distorted,
+  if not perpendicular to the z-axis. Use with care
+
+\end{itemize}
+
+\section{Finally}
+
+This vignette was made with Sweave \citep{Leisch02}.
+
+\clearpage
+\bibliography{vignettes}
+
+\end{document}

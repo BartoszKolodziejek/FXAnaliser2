@@ -1,0 +1,411 @@
+\documentclass[article,nojss]{jss}
+\DeclareGraphicsExtensions{.pdf,.eps, .jpg, .png}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Add-on packages and fonts
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+
+\newcommand{\noun}[1]{\textsc{#1}}
+%% Bold symbol macro for standard LaTeX users
+\providecommand{\boldsymbol}[1]{\mbox{\boldmath $#1$}}
+
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\newcommand{\ov}{\textbf{\textsf{OceanView }}}
+\newcommand{\R}{\proglang{R}}
+\title{
+  Package \pkg{OceanView} - a short manual.
+}
+\Plaintitle{Package Oceanview - a short manual}
+
+\Keywords{
+  marine science, 3-D data, 4-D data, quiver, image2D,
+  \proglang{R}
+}
+
+\Plainkeywords{
+marine science, 3-D data, 4-D data, quiver, image2D,
+R
+}
+
+
+\author{Karline Soetaert\\
+NIOZ-Yerseke\\
+The Netherlands
+}
+
+\Plainauthor{Karline Soetaert}
+
+\Abstract{
+  The \R{ }\citep{R2013} package \ov \citep{OceanView} is a compagnon to the packages
+  \pkg{plot3D} \citep{plot3D} and \pkg{plot3Drgl} \citep{plot3Drgl}. 
+  These packages contain functions for visualising multidimensional data in 
+  base R graphics (\pkg{plot3D}) or in openGL (\pkg{plot3Drgl}). 
+  
+  \ov has functions specifically designed for visualising complex oceanographic data.
+  
+  In this vignette it is shown how to visualise flows, 
+  how to create movie sequences for depicting particle tracks in 2-D and 3-D, 
+  how to increase the resolution of multidimensional data or how to quickly produce
+  plots of all columns in a data-frame or matrix. 
+  
+  Other examples of functions to visualise multi-dimensional data can be found in 
+  the help files or vignettes of the packages \pkg{plot3D} and \pkg{plot3Drgl}.
+  
+  In another vignette in \pkg{OceanView}, (\code{vignette("Northsea")}) \ov is used 
+  for plotting the output of a 3-D hydrodynamic model.  
+  
+  A graphical gallery using one of  \pkg{plot3D}, \pkg{plot3Drgl} or \pkg{OceanView}
+  is in \url{http://www.rforscience.com/rpackages/visualisation/oceanview/}.
+}
+
+%% The address of (at least) one author should be given
+%% in the following format:
+\Address{
+  Karline Soetaert\\
+  Royal Netherlands Institute of Sea Research (NIOZ)\\
+  4401 NT Yerseke, Netherlands\\
+  E-mail: \email{karline.soetaert@nioz.nl}\\
+  URL: \url{http://www.nioz.nl/staff-detail?id=784400}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% R/Sweave specific LaTeX commands.
+%% need no \usepackage{Sweave}
+%\VignetteIndexEntry{OceanView: Visualising oceanographic data and model output}
+%\VignetteKeyword{marine science}
+%\VignetteKeyword{3-D data}
+%\VignetteKeyword{4-D data}
+%\VignetteKeyword{quiver}
+%\VignetteKeyword{image2D}
+%\VignettePackage{OceanView}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Begin of the document
+\begin{document}
+\SweaveOpts{engine=R,eps=FALSE,resolution = 80}
+\SweaveOpts{keep.source=TRUE}
+
+<<preliminaries,echo=FALSE,results=hide>>=
+options(prompt = " ")
+options(continue = " ")
+options(width=75)
+library(OceanView)
+@
+
+\maketitle
+\section{Converting large data sets from long to cross-table format}
+This function was made to convert data from monitoring campaigns into 
+a format suitable for creating images. 
+Typically monitoring campaigns extend over a couple of sampling days, but when making images, 
+these different sampling days should be treated as one campaign.
+
+The long-term monitoring data from the NIOZ \citep{WSnioz} for instance, in dataset \code{WSnioz}, 
+ contain a selection of the water quality data from the monthly sampling in the 
+Westerschelde. 
+<<>>=
+head (WSnioz, n = 2)
+@
+The data are in the format as extracted from the NIOZ database. 
+To visualise its contents, it is easiest to put these data in cross-table format; 
+here it is assumed that samplings that took place within 5 consecutive days belong to the same campaign (\code{df.row}).
+<<>>=
+NO3 <- db2cross(WSnioz, row = "SamplingDateTimeREAL", 
+         col = "Station", val = "DataValue", 
+         subset = (VariableName == "WNO3"), df.row = 5)
+@
+To create the image plot, the resolution is increased (\code{resfac}):
+<<label=NO3,include=FALSE, pdf = FALSE, eps = FALSE, png = TRUE>>=
+image2D(NO3, resfac = 3)
+@
+
+\setkeys{Gin}{width=0.6\textwidth}
+\begin{figure}
+\begin{center}
+<<label=NO3,fig=TRUE,echo=FALSE,pdf=FALSE, png = TRUE>>=
+<<NO3>>
+@
+\end{center}
+\caption{An image of spatio-temporal data}
+\label{fig:fo}
+\end{figure}
+
+\clearpage
+\section{Quickly analysing and plotting several columns from a matrix}
+Oceanographers often have their data in a spreadsheet, where columns are different variables. 
+The data set \code{WSnioz.table} contains the long-term monitoring data from the NIOZ in such a tabular format. 
+
+Function \code{Msummary} and \code{Mdescribe} create suitable summaries of the columns of tabular data sets. 
+<<>>=
+ head(WSnioz.table, n = 2)
+ Msummary(WSnioz.table)
+@
+
+Function \code{Mplot} is a quick way to visualise the contents of tabular data, while
+\code{Msplit} splits the data according to a factor.
+\footnote{Of course, there are many other functions in other packages 
+ that do similar things}
+
+As a first example, plot the contents of the tabular NIOZ monitoring data for  
+station 1 and for two variables. 
+<<label=WSnioza,include=FALSE, pdf = FALSE, eps = FALSE, png = TRUE>>=
+ Mplot(WSnioz.table, subset = Station == 1, 
+   select = c("WNO3", "WNO2"), xlab = "Daynr") 
+@
+\setkeys{Gin}{width=0.8\textwidth}
+\begin{figure} 
+\begin{center}
+<<label=WSnioza,fig=TRUE,echo=FALSE,pdf=FALSE, png = TRUE, width = 8, height = 4>>=
+<<WSnioza>>
+@
+\end{center}
+\caption{A quick plot of a (selection) of a tabular data set}
+\label{fig:WSnioz}
+\end{figure}
+
+
+We now plot the contents of the tabular NIOZ monitoring data for the 
+stations 1 and 13.  We first split the data set according to the station number, 
+selecting these two stations (\code{Msplit}), then plot the timeseries for 
+four variables. 
+<<label=WSnioz,include=FALSE, pdf = FALSE, eps = FALSE, png = TRUE>>=
+ Mplot(Msplit(WSnioz.table, "Station", subset = Station %in% c(1, 13)) , 
+   select = c("WNO3", "WNO2", "WNH4", "WO2"), lty = 1, lwd = 2,
+   xlab = "Daynr", log = c("y", "y", "y", ""), 
+   legend = list(x = "left", title = "Station")) 
+@
+
+\setkeys{Gin}{width=0.8\textwidth}
+\begin{figure} 
+\begin{center}
+<<label=WSnioz,fig=TRUE,echo=FALSE,pdf=FALSE, png = TRUE>>=
+<<WSnioz>>
+@
+\end{center}
+\caption{A quick plot of a (selection) of two data sets}
+\label{fig:WSnioz}
+\end{figure}
+
+\clearpage
+\section{Resolution and mapping to sigma coordinates}
+Sometimes, we may want to have data in higher or lower resolution. 
+Package \pkg{OceanView} contains a quick-and-dirty, linear, interpolation method
+to increase (or decrease) the resolution.
+As it is written in R-code, it is not very fast.
+
+Here we convert the dataset \code{volcano}, to very low resolution. 
+(decreasing resolution is handy if you want to quickly visualise a very large dataset).
+<<>>=
+changeres(var = volcano, x = 1:nrow(volcano), y = 1:ncol(volcano), resfac = 0.1)
+@ 
+The function \code{remap} is more flexible:
+<<>>=
+remap(var = volcano, x = 1:nrow(volcano), y = 1:ncol(volcano), 
+  xto = c(1, 20, 40), yto = c(2, 5))
+@ 
+The function \code{extract} interpolates to pairs of points 
+<<>>=
+extract(volcano, x = 1:nrow(volcano), y = 1:ncol(volcano),
+  xyto = cbind(c(2, 5), c(5, 10)))
+@
+The mapping to sigma-coordinates is exemplified in the \code{vignette ("Northsea")}.
+\clearpage
+\section{Plotting two-dimensional velocity data}
+Three functions were created to plot 2D velocity data: \code{quiver2D}, \code{flowpath} and \code{vectorplot}.
+
+<<label=flows,include=FALSE, pdf = FALSE, eps = FALSE, png = TRUE>>=
+ par(mfrow = c(2, 2))
+ x  <- seq(-1, 1, by = 0.2)
+ y  <- seq(-1, 1, by = 0.2)
+ dx <- outer(x, y , function(x, y) -y)
+ dy <- outer(x, y , function(x, y) x)
+
+# velocity plot, different color for up/downward pointing arrows
+ F <- quiver2D(u = dx, v = dy, x = x, y = y, colvar = dx > 0, 
+     col = c("red", "blue"), colkey = FALSE, arr.max = 0.3, arr.min = 0.1)
+ legend("topright", bg = "white", 
+     legend = paste("max = ", format(F$speed.max, digits = 2))) 
+ names(F)
+ 
+ quiver2D(u = dx, v = dy, x = x, y = y, colvar = sqrt(dx^2 + dy^2), 
+     arr.max = 0.1, arr.min = 0.1, clab = "speed")
+     
+# flow paths
+ flowpath(u = dx, v = dy, x = x, y = y, numarr = 3, 
+   startx = 0.1, starty = 0.1)
+ flowpath(u = dx, v = dy, x = x, y = y, col = "red", numarr = 2, 
+   startx = c(0.9, -0.9), starty = c(0.0, 0.0), add = TRUE)
+
+# vectorplots
+ u <- rnorm(10)
+ v <- rnorm(10)
+ x <- y <- 1 : 10
+ vectorplot(u = u, v = v, x = x, y = y, clim = c(0, 3), 
+   colvar = sqrt(u^2 + v^2), arr = TRUE)
+ points(x, y)
+@
+
+\setkeys{Gin}{width=1.0\textwidth}
+\begin{figure} 
+\begin{center}
+<<label=flows,fig=TRUE,echo=FALSE,pdf=FALSE, png = TRUE>>=
+<<flows>>
+@
+\end{center}
+\caption{Several ways to visualise flows}
+\label{fig:flows}
+\end{figure}
+
+\clearpage
+\section{Plotting temporally variable particle distributions}
+\pkg{OceanView} incorporates a number of functions to display the result of a particle transport (Lagrangian) model in two and three dimensions.
+It also comprises a data set with output from the Lagrangian Transport model (\code{Ltrans}) from Chesapeake Bay \citep{Ltrans}.
+\subsection{A quick view of particle distributions}
+\code{Ltrans} is an array of dimension (608 x 4 x 108) that contains for each of the 608 particles tracked, and at each of the 108 output steps the longitude, latitude, water depth and source region; the latter takes the values of 1 or 2.
+<<>>=
+dim(Ltrans)
+@
+We produce a quick view of the particle geographical position and water depth of all particles, on a bathymetric map of the area. 
+We start by plotting the bathymetry, using grey scales. The color key is not drawn, but space for it is reserved (\code{plot = FALSE}).
+Then we add the particle positions using depth as the color variable.
+<<label=Chesa,include=FALSE, pdf = FALSE, eps = FALSE, png = TRUE>>=
+image2D(Chesapeake$lon, Chesapeake$lat, z = Chesapeake$depth, 
+  col = grey(seq(1, 0., length.out = 100)), main = "Ltrans",
+  colkey = list(plot = FALSE))
+  
+scatter2D(x = Ltrans[,1,], y = Ltrans[,2,], colvar = Ltrans[,3,], 
+  pch = ".", cex = 2, add = TRUE, clab = "depth, m")
+@
+
+\setkeys{Gin}{width=0.6\textwidth}
+\begin{figure}
+\begin{center}
+<<label=Chesa,fig=TRUE,echo=FALSE,pdf=FALSE, png = TRUE>>=
+<<Chesa>>
+@
+\end{center}
+\caption{Distribution of particles in Chesapeake (all time instances)}
+\label{fig:Chesa}
+\end{figure}
+\subsection{Particle distributions in 2D}
+We can plot the temporal evolution of the particles in more detail,
+either using the traditional device (slow), or using open GL (fast).
+
+We start by plotting the geographical position at selected time points, ignoring the depth (2-D output) using traditional graphics; the colors \code{green} and \code{orange} represent the source area of the particles.
+Note that we specify the bathymetric map of the area through the \code{image} argument of the function.
+
+<<label=Ltrans2D,include=FALSE, pdf = FALSE, eps = FALSE, png = TRUE>>=
+lon <- Chesapeake$lon
+lat <- Chesapeake$lat
+depth <- Chesapeake$depth
+
+par(mfrow = c(2, 2)) 
+for (i in seq(10, 106, length.out = 4)) 
+   tracers2D(Ltrans[, 1, i], Ltrans[, 2, i],  
+             colvar = Ltrans[ ,4, i], col = c("green", "orange"),
+             pch = 16, cex = 0.5, 
+             image = list(x = lon, y = lat, z = depth), colkey = FALSE,
+             main = paste("time ", i))
+@
+
+\setkeys{Gin}{width=1.0\textwidth}
+\begin{figure}
+\begin{center}
+<<label=Ltrans2D,fig=TRUE,echo=FALSE,pdf=FALSE, png = TRUE>>=
+<<Ltrans2D>>
+@
+\end{center}
+\caption{2D distribution of particles in Chesapeake at selected time points using traditional graphics}
+\label{fig:Ltrans}
+\end{figure}
+
+In open GL, it works slightly different: first we create a 2D bathymetric map, on which we add the tracer positions. 
+The output of this code is not shown, but the particles move very fast (on my computer), so you will probably want to slow it down. 
+When using openGL, you can zoom in into specific regions of the plot, 
+or cut slices (\code{cutrgl}). 
+\begin{Schunk}
+\begin{Sinput}
+image2Drgl (x = lon, y = lat, z = depth)
+ for (i in seq(1, 108, by = 3)) {
+   tracers2Drgl(Ltrans[, 1, i], Ltrans[, 2, i],  
+             colvar = Ltrans[ ,4, i], col = c("green", "orange"))
+# remove # to slow down
+#   Sys.sleep(0.1)  
+ }  
+\end{Sinput}
+\end{Schunk}
+\subsection{Particle distributions in 3D}
+In a similar way, we can plot the temporal evolution of the 3-D positions (including depth) of particles using traditional or open GL graphics.
+
+We start by plotting the geographical position and the depth, i.e. 3-D output and using traditional graphics.
+Note that we specify the drawing of the bathymetry of the area through the \code{surf} argument of the function (see e.g. \code{?persp3D} for its arguments).
+
+<<label=Ltrans3D,include=FALSE, pdf = FALSE, eps = FALSE, png = TRUE>>=
+lon <- Chesapeake$lon
+lat <- Chesapeake$lat
+depth <- Chesapeake$depth
+
+par(mfrow = c(1, 2), mar = c(0, 0, 2, 0)) 
+for (i in c(20, 100)) 
+tracers3D(Ltrans[, 1, i], Ltrans[, 2, i], Ltrans[, 3, i], 
+          colvar = Ltrans[ ,4, i], col = c("green", "orange"),
+          pch = 16, cex = 0.5, 
+          surf = list(x = lon, y = lat, z = -depth, scale = FALSE, 
+           expand = 0.02, colkey = FALSE, shade = 0.3, colvar = depth),
+          colkey = FALSE, main = paste("time ", i))
+@
+\setkeys{Gin}{width=1.0\textwidth}
+\begin{figure}[h]
+\begin{center}
+<<label=Ltrans3D,fig=TRUE,echo=FALSE,pdf=FALSE, png = TRUE, width = 8, height = 5>>=
+<<Ltrans3D>>
+@
+\end{center}
+\caption{3D distribution of particles in Chesapeake at two time points, traditional graphics}
+\label{fig:Ltrans}
+\end{figure}
+
+To do the same in open GL, we can use function \code{tracers3Drgl} (see help file of \code{Ltrans}), 
+or use function \code{moviepoints3D}; the former requires to loop over the time points that we want to display, the latter requires input of the times, which should have the same length as x, y, z. 
+\begin{Schunk}
+\begin{Sinput}
+ persp3Drgl(x = lon, y = lat, z = -depth, colvar = depth, scale = FALSE, 
+   expand = 0.02, main = "particle distribution", 
+   lighting = TRUE, smooth = TRUE) 
+
+ nt <- dim(Ltrans)[3]  # number of time points
+ np <- dim(Ltrans)[1]  # number of particles
+ 
+ times <- rep(1:nt, each = np)
+ 
+ moviepoints3D(x = Ltrans[, 1, ], y = Ltrans[, 2, ], z = Ltrans[, 3, ], 
+               t = times, colvar = Ltrans[ ,4, ], col = c("green", "orange"),
+               cex = 5, ask = TRUE)
+
+ }  
+\end{Sinput}
+\end{Schunk}
+
+The figure shows only one time point, after I have rotated the bathymetry a bit: 
+
+\setkeys{Gin}{width=0.6\textwidth}
+\begin{figure}[h]
+\begin{center}
+\includegraphics{moviepoints3D.png}
+\end{center}
+\caption{Screen capture of the 3D distribution of particles in Chesapeake in openGL}
+\label{fig:gg}
+\end{figure}
+
+Note: a comparable function \code{movieslice3D} creates a 
+sequence of 2-D slices along an axis of a full 3-D data set. See \code{example(movieslice3D)}.
+\section{Finally}                                    
+
+This vignette was made with Sweave \citep{Leisch02}.
+
+\clearpage
+\bibliography{vignettes}
+
+\end{document}

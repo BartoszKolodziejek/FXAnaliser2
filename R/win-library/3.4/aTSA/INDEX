@@ -1,0 +1,20 @@
+Holt                    Holt's Two-parameter Exponential Smoothing
+MA                      Moving Average Filter
+Winters                 Winters Three-parameter Smoothing
+aTSA                    Alternative Time Series Analysis
+accurate                Accurate Computation
+adf.test                Augmented Dickey-Fuller Test
+arch.test               ARCH Engle's Test for Residual
+                        Heteroscedasticity
+coint.test              Cointegration Test
+ecm                     Error Correction Model
+estimate                Estimate an ARIMA Model
+expsmooth               Simple Exponential Smoothing
+forecast                Forecast From ARIMA Fits
+identify                Identify a Time Series Model
+kpss.test               Kwiatkowski-Phillips-Schmidt-Shin Test
+pp.test                 Phillips-Perron Test
+stationary.test         Stationary Test for Univariate Time Series
+stepar                  Stepwise Autoregressive Model
+trend.test              Trend Test
+ts.diag                 Diagnostics for ARIMA fits

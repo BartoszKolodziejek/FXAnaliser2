@@ -1,0 +1,26 @@
+DistributionUtils-package
+                        Utility functions useful for all distributions
+                        in packages following the standard approach
+                        developed in Scott, Wuertz and Dong.
+besselRatio             Ratio of Bessel K Functions
+distCalcRange           Range of a Unimodal Distribution
+distIneqMassart         Massart Inequality for Distributions
+distIneqMassartPlot     Massart Inequality Plot Function
+distMode                Mode of a Unimodal Distribution
+distStepSize            Step Size for Calculating the Range of a
+                        Unimodal Distribution
+incompleteBesselK       The Incomplete Bessel K Function
+integrateDens           Integrates a Density Function
+inversionTestpq         Inversion Tests for Distributions
+is.wholenumber          Is Object Numeric and Whole Numbers
+logHist                 Plot Log-Histogram
+momChangeAbout          Obtain Moments About a New Location
+momIntegrated           Moments Using Integration
+momSE                   Standard Errors of Sample Moments
+moranTest               Moran's Log Spacings Test
+pDist                   Distribution and Quantile Functions for
+                        Unimodal Distributions
+safeIntegrate           Safe Integration of One-Dimensional Functions
+skewness                Sample Skewness and Kurtosis
+tailPlot                Tail Plot Functions
+tsHessian               Calculate Two-Sided Hessian Approximation

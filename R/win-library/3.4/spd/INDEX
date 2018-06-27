@@ -1,0 +1,9 @@
+GPDFIT-class            Class: Generalized Pareto Distribution
+GPDTAILS-class          Class: GPDTAILS
+SPD-class               Class: Semi-Parametric Distribution
+plot-methods            Method: Plotting (S4) for implemented S4
+                        classes
+pspd                    Method: Semi-Parametric Distribution
+spd-package             The Semi-Parametric Distribution (spd) package
+spdfit-methods          Method: Fitting the Semi-Parametric
+                        Distribution

@@ -1,0 +1,11 @@
+import(plot3D)
+import(rgl)
+importFrom("grDevices", "axisTicks")
+export(plotrgl, cutrgl, uncutrgl, croprgl, uncroprgl, image2Drgl, contour2Drgl, 
+  scatter2Drgl, text2Drgl, arrows2Drgl, segments2Drgl, rect2Drgl,
+  lines2Drgl, points2Drgl)
+export(persp3Drgl, ribbon3Drgl, hist3Drgl, scatter3Drgl, points3Drgl,
+  lines3Drgl, slice3Drgl, slicecont3Drgl, isosurf3Drgl, voxel3Drgl, 
+  surf3Drgl, spheresurf3Drgl, segments3Drgl, box3Drgl, border3Drgl, 
+  rect3Drgl, text3Drgl, triangle3Drgl, image3Drgl, contour3Drgl)
+  
